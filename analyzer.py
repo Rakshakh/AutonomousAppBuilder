@@ -167,8 +167,8 @@ class ProblemAnalyzer:
         grouped = {}
         
         for problem in problems:
-            # Use first 5 keywords as a signature
-            signature = ' '.join(sorted(problem['keywords'][:5]))
+            # Use first 3 keywords as a signature (less strict for better grouping)
+            signature = ' '.join(sorted(problem['keywords'][:3]))
             
             if signature in grouped:
                 grouped[signature]['count'] += 1
@@ -181,7 +181,7 @@ class ProblemAnalyzer:
             else:
                 grouped[signature] = {
                     'title': problem['title'],
-                    'keywords': problem['keywords'][:5],
+                    'keywords': problem['keywords'][:3],
                     'category': problem['category'],
                     'count': 1,
                     'total_engagement': problem['engagement'],

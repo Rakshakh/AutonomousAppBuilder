@@ -23,7 +23,7 @@
     ]
   },
   "analysis": {
-    "min_problem_mentions": 3,
+    "min_problem_mentions": 2,
     "top_problems_count": 50,
     "keywords": [
       "problem",
