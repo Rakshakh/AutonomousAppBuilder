@@ -32,6 +32,19 @@ def scrape():
     global latest_analysis, latest_scrape_time
     
     try:
+        # Check if demo data exists (for when external APIs are not accessible)
+        if os.path.exists('demo_data.json'):
+            print("Loading demo data...")
+            with open('demo_data.json', 'r') as f:
+                demo_data = json.load(f)
+                latest_analysis = demo_data['analysis']
+                latest_scrape_time = datetime.now().isoformat()
+                return jsonify({
+                    'success': True,
+                    'message': f'Loaded demo data with {latest_analysis["total_problems"]} problems',
+                    'timestamp': latest_scrape_time
+                })
+        
         # Scrape all sources
         problems = scrape_all_sources(config)
         
