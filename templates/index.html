@@ -271,7 +271,7 @@
     </div>
 
     <script>
-        let isScrabing = false;
+        let isScraping = false;
 
         function showError(message) {
             const errorEl = document.getElementById('error');
@@ -287,9 +287,9 @@
         }
 
         async function startScrape() {
-            if (isScrabing) return;
+            if (isScraping) return;
             
-            isScrabing = true;
+            isScraping = true;
             const btn = document.getElementById('scrapeBtn');
             btn.disabled = true;
             
@@ -315,7 +315,7 @@
                 showError('Error: ' + error.message);
                 updateStatus('Error occurred');
             } finally {
-                isScrabing = false;
+                isScraping = false;
                 btn.disabled = false;
             }
         }
@@ -385,7 +385,7 @@
 
         // Auto-refresh every 5 minutes
         setInterval(() => {
-            if (!isScrabing) {
+            if (!isScraping) {
                 refreshData();
             }
         }, 5 * 60 * 1000);
