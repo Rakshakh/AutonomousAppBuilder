@@ -1,0 +1,40 @@
+{
+  "scraping": {
+    "enabled_sources": ["reddit", "stackoverflow", "github"],
+    "max_posts_per_source": 100,
+    "subreddits": [
+      "learnprogramming",
+      "programming",
+      "webdev",
+      "technology",
+      "softwareengineering"
+    ],
+    "stackoverflow_tags": [
+      "python",
+      "javascript",
+      "web-development",
+      "react",
+      "node.js"
+    ],
+    "github_topics": [
+      "bug",
+      "feature-request",
+      "question"
+    ]
+  },
+  "analysis": {
+    "min_problem_mentions": 2,
+    "top_problems_count": 50,
+    "keywords": [
+      "problem",
+      "issue",
+      "bug",
+      "error",
+      "help",
+      "how to",
+      "can't",
+      "doesn't work",
+      "need"
+    ]
+  }
+}
